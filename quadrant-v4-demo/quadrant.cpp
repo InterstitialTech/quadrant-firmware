@@ -10,11 +10,11 @@ Quadrant::Quadrant(){
 
 void Quadrant::begin(){
   //MIDI setup
-  using Transport = MIDI_NAMESPACE::SerialMIDI<SoftwareSerial>;
-  Transport serialMIDI(_midi);
-  MIDI_NAMESPACE::MidiInterface<Transport> MIDI((Transport&)serialMIDI);
-  MIDI.begin();
-  //_midi.begin(31250);
+  //using Transport = MIDI_NAMESPACE::SerialMIDI<SoftwareSerial>;
+  //Transport serialMIDI(_midi);
+  //MIDI_NAMESPACE::MidiInterface<Transport> MIDI((Transport&)serialMIDI);
+  //MIDI.begin();
+  _midi.begin(31250);
 
   //DAC setup
   Wire1.setSDA(6);
