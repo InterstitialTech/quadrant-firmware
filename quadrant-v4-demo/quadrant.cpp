@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 #include <Wire.h>
-#include <MIDI.h>
+//#include <MIDI.h>
 #include "quadrant.h"
 
 Quadrant::Quadrant(){
@@ -14,7 +14,7 @@ void Quadrant::begin(){
   //Transport serialMIDI(_midi);
   //MIDI_NAMESPACE::MidiInterface<Transport> MIDI((Transport&)serialMIDI);
   //MIDI.begin();
-  _midi.begin(31250);
+  //_midi.begin(31250);
 
   //DAC setup
   Wire1.setSDA(6);
@@ -63,9 +63,11 @@ void Quadrant::writeDac(uint8_t dac, int dacData){
   Wire1.endTransmission();
  }
 
+/*
  void Quadrant::writeMidi(uint8_t midiData){
   _midi.write(midiData);   
  }
+*/
 
 
 void Quadrant::_disableLidars(){
@@ -244,4 +246,3 @@ int Quadrant::readLidar(uint8_t lidarId) {
   
   return _measure[lidarId].RangeMilliMeter;
 }
-

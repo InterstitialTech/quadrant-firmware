@@ -37,14 +37,14 @@ class Quadrant
         int readLidar(uint8_t id=4);
         int setLidarId(uint8_t lidarId, uint8_t id=0);
         void writeDac(uint8_t dac, int dacData);
-        void writeMidi(uint8_t midiData);
+        //void writeMidi(uint8_t midiData);
         void setLidarContinuous(uint8_t id=4);
         int checkLidarContinuous(uint8_t id=4);
         int readLidarContinuous(uint8_t id=4);
         const uint8_t leds[4]={LED0, LED1, LED2, LED3};
     private:
         void _disableLidars();
-        SerialPIO _midi=SerialPIO(11, SerialPIO::NOPIN);
+        //SerialPIO _midi=SerialPIO(11, SerialPIO::NOPIN);
         //Adafruit_VL53L0X _lidar[4]={_lox0, _lox1, _lox2, _lox3};
         Adafruit_VL53L0X _lox0= Adafruit_VL53L0X();
         Adafruit_VL53L0X _lox1= Adafruit_VL53L0X();
